@@ -24,3 +24,5 @@ while True:
 
     for j in range(len(ganhador)):
         print(ganhador[j])
+
+    print()

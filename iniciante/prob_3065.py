@@ -1,24 +1,25 @@
+x = 1
 while True:
     n = int(input())
-    x = 1
 
     if n == 0:
         break
 
     tudo = input()
-    total = 0
-    litsa = []
+    lista = tudo.replace("+", " ").replace("-", " ").split()
 
-    for j in tudo:
-        if j != "+" and j != "-":
-            litsa.append(int(j))
+    operadores = [op for op in tudo if op == "+" or op == "-"]
 
-    total = sum(litsa)
+    total = int(lista[0])
 
-    for i in range(1, len(tudo), 2):
-        if tudo[i] == "-":
-            total -= int(tudo[i + 1])
+    for i in range(len(operadores)):
+        if operadores[i] == "+":
+            total += int(lista[i + 1])
+        else:
+            total -= int(lista[i + 1])
 
     print("Teste {}".format(x))
     print(total)
+    print()
+
     x += 1

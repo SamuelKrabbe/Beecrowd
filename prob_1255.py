@@ -1,4 +1,5 @@
 n = int(input())
+
 alfabeto = [
     "a",
     "b",
@@ -29,19 +30,23 @@ alfabeto = [
 ]
 
 
-for i in range(n):
-    string = input()
-    new_string = ""
-
+def oraganizacaoString(string):
     """
     Organizando os caracteres
     """
+    new_string = ""
     string = string.strip()
     string = string.lower()
 
     for caractere in string:
         if caractere in alfabeto:
             new_string += caractere
+    return new_string
+
+
+for i in range(n):
+    string = input()
+    new_string = oraganizacaoString(string)
 
     """
     Colocando a frequência de cada letra em uma lista e colocando a com maior frequencia em um variável

@@ -24,13 +24,13 @@ int main()
     float sum, average;
     int matriz[12][12];
 
-    scanf("%c", &sumOrAverage);
+    scanf("%c\n", &sumOrAverage);
 
     for (int i = 0; i < 12; i++)
     {
         for (int j = 0; j < 12; j++)
         {
-            scanf("%f", &matriz[i][j]);
+            scanf("%f\n", &matriz[i][j]);
         }
     }
 
@@ -39,11 +39,11 @@ int main()
     if (sumOrAverage == 'M')
     {
         average = sum / 30;
-        printf("%.1f", average);
+        printf("%0.1f\n", average);
     }
     else
     {
-        printf("%.1f", sum);
+        printf("%0.1f\n", sum);
     }
     return 0;
 }

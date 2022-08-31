@@ -15,12 +15,13 @@ float sumOfRightsideMatrix(int matriz[12][12])
         column--;
         x--;
     }
+    return sum;
 }
 
 int main()
 {
     char sumOrAverage;
-    float sum;
+    float sum, average;
     int matriz[12][12];
 
     scanf("%c", &sumOrAverage);
@@ -34,5 +35,15 @@ int main()
     }
 
     sum = sumOfRightsideMatrix(matriz);
+
+    if (sumOrAverage == 'M')
+    {
+        average = sum / 30;
+        printf("%.1f", average);
+    }
+    else
+    {
+        printf("%.1f", sum);
+    }
     return 0;
 }

@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float sumOfRightsideMatrix(int matriz[12][12])
+float sumOfRightsideMatrix(float matriz[12][12])
 {
-    int column = 11, x = 5;
     float sum = 0;
+    int x = 1;
 
-    while (x > 0)
+    for (int column = 11; column > 6; column--)
     {
-        for (int i = 1; i < column; i++)
+        for (int row = x; row < column; row++)
         {
-            sum += matriz[i][column];
+            sum += matriz[row][column];
         }
-        column--;
-        x--;
+        x++;
     }
     return sum;
 }
@@ -21,8 +20,7 @@ float sumOfRightsideMatrix(int matriz[12][12])
 int main()
 {
     char sumOrAverage;
-    float sum, average;
-    int matriz[12][12];
+    float sum, average, matriz[12][12];
 
     scanf("%c\n", &sumOrAverage);
 
@@ -39,11 +37,11 @@ int main()
     if (sumOrAverage == 'M')
     {
         average = sum / 30;
-        printf("%0.1f\n", average);
+        printf("%.1f\n", average);
     }
     else
     {
-        printf("%0.1f\n", sum);
+        printf("%.1f\n", sum);
     }
     return 0;
 }

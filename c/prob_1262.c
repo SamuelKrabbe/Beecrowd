@@ -1,16 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#define LENGHT 50
 
 int main(void)
 {
-    char *track = (char *)calloc(50, sizeof(char)), lastChar = 'O';
-    int process, machineCycles = 0, countForR = 0;
+    char track[LENGHT], lastChar = 'O';
+    int process, machineCycles = 0, countForR = 0, arrayLenght = 0;
 
     while (scanf("%50s", track) != EOF)
     {
         scanf("%d", &process);
 
-        for (int i = 0; i < 50; i++)
+        for (int j = 0; j < LENGHT; j++)
+        {
+            if (track[j] == 'R' || track[j] == 'W')
+            {
+                arrayLenght++;
+            }
+        }
+
+        for (int i = 0; i < arrayLenght; i++)
         {
             if (countForR == process)
             {
@@ -62,6 +72,7 @@ int main(void)
         machineCycles = 0;
         countForR = 0;
         lastChar = 'O';
+        memset(track, 0, LENGHT);
     }
     return 0;
 }

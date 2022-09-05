@@ -6,20 +6,19 @@ int main(void)
     char track[50], lastChar = 'O';
     int process, machineCycles = 0, countForR = 0;
 
-    while (scanf("%50s[^\n]", track) >= 1)
+    while (scanf("%50s", track) != EOF)
     {
         scanf("%d", &process);
-        printf("%s\n%d", track, process);
 
         for (int i = 0; i < 50; i++)
         {
-            if (countForR == 3)
+            if (countForR == process)
             {
                 countForR = 0;
                 lastChar = 'O';
             }
 
-            if (countForR < 3)
+            if (countForR < process)
             {
                 if (lastChar = 'R')
                 {

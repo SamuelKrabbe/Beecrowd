@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    char track[50], lastChar = 'O';
+    char *track = (char *)calloc(50, sizeof(char)), lastChar = 'O';
     int process, machineCycles = 0, countForR = 0;
 
     while (scanf("%50s", track) != EOF)

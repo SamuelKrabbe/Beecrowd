@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define LENGHT 50
+#define LENGHT 51
 
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
     {
         scanf("%d", &process);
 
-        for (int j = 0; j < LENGHT; j++)
+        for (int j = 0; j < LENGHT - 1; j++)
         {
             if (track[j] == 'R' || track[j] == 'W')
             {

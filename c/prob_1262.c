@@ -12,12 +12,9 @@ int main(void)
     {
         scanf("%d", &process);
 
-        for (int j = 0; j < LENGHT - 1; j++)
+        while (track[arrayLenght] != '\0')
         {
-            if (track[j] == 'R' || track[j] == 'W')
-            {
-                arrayLenght++;
-            }
+            arrayLenght++;
         }
 
         for (int i = 0; i < arrayLenght; i++)
@@ -72,7 +69,7 @@ int main(void)
         machineCycles = 0;
         countForR = 0;
         lastChar = 'O';
-        memset(track, 0, LENGHT);
+        arrayLenght = 0;
     }
     return 0;
 }

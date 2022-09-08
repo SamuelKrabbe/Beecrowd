@@ -1,35 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main()
 {
     int column;
-    char operation;
-    float matriz[12][12], soma = 0.0, media;
+    char operation[2];
+    double vector[12][12], soma = 0.0, media;
 
     scanf("%d", &column);
-    scanf("%c", &operation);
+    scanf("%s", operation);
 
     for (int i = 0; i < 12; i++)
     {
         for (int j = 0; j < 12; j++)
         {
-            scanf("%f", &matriz[i][j]);
+            scanf("%lf", &vector[i][j]);
+
+            if (j == column)
+            {
+                soma += vector[i][j];
+            }
         }
     }
-    for (int k = 0; k < 12; k++)
-    {
-        soma += matriz[k][column];
-    }
 
-    if (operation == 'M')
+    if (operation[0] == 'M')
     {
-        media = soma / 12.0;
-        printf("%.1f\n", media);
+        media = (soma / 12.0);
+        printf("%.1lf\n", media);
     }
     else
     {
-        printf("%.1f\n", soma);
+        if (operation[0] == 'S')
+        {
+            printf("%.1lf\n", soma);
+        }
     }
     return 0;
 }

@@ -14,10 +14,9 @@ int main(void)
     {
         for (int j = 0; j < 12; j++)
         {
-            scanf("%f", matriz[i][j]);
+            scanf("%f", &matriz[i][j]);
         }
     }
-
     for (int k = 0; k < 12; k++)
     {
         soma += matriz[k][column];
@@ -26,11 +25,11 @@ int main(void)
     if (operation == 'M')
     {
         media = soma / 12.0;
-        printf("%d", media);
+        printf("%.1f\n", media);
     }
     else
     {
-        printf("%f", soma);
+        printf("%.1f\n", soma);
     }
     return 0;
 }

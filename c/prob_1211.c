@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-long long int getNumOfDigits(long long int n);
+int getNumOfDigits(long long int n);
 
 int main()
 {
@@ -10,25 +10,25 @@ int main()
 
     while (scanf("%d", &cases) != EOF)
     {
-        int savedChars = 0, a, b;
-        long long int telNumber[cases], numOfDigits;
+        int savedChars = 0, a, b, numOfDigits;
+        long long int telNumber[cases];
 
         for (int i = 0; i < cases; i++)
         {
             scanf("%lld", &telNumber[i]);
         }
 
-        numOfDigits = getNumOfDigits(telNumber[0]);
-
         for (int j = 0; j < cases; j++)
         {
-            while ((numOfDigits != -1) && ((j + 1) != cases))
+            numOfDigits = getNumOfDigits(telNumber[0]);
+
+            while ((numOfDigits >= 0) && ((j + 1) < cases))
             {
+                // printf("%lld", numOfDigits);
                 numOfDigits--;
 
                 a = telNumber[j] / pow(10, numOfDigits);
                 b = telNumber[j + 1] / pow(10, numOfDigits);
-
                 if (a == b)
                     savedChars++;
                 else
@@ -41,13 +41,13 @@ int main()
     return 0;
 }
 
-long long int getNumOfDigits(long long int n)
+int getNumOfDigits(long long int telNumber)
 {
-    long long int numOfDigits;
+    int numOfDigits = 1;
 
-    while ((n % 10) != 0)
+    while (telNumber <= 10)
     {
-        n /= 10;
+        telNumber /= 10;
         numOfDigits++;
     }
     return numOfDigits;

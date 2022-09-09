@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int getLenghtTelNum(long long int n);
+long long int getNumOfDigits(long long int n);
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
     while (scanf("%d", &cases) != EOF)
     {
         int savedChars = 0, a, b;
-        long long int telNumber[cases], numOfDigits;
+        long long int telNumber[2], numOfDigits;
 
         for (int i = 0; i < cases; i++)
         {
@@ -22,7 +22,7 @@ int main()
 
         for (int j = 0; j < cases; j++)
         {
-            while (numOfDigits != -1)
+            while ((numOfDigits != -1) && ((j + 1) != cases))
             {
                 numOfDigits--;
 
@@ -41,7 +41,7 @@ int main()
     return 0;
 }
 
-int getNumOfDigits(long long int n)
+long long int getNumOfDigits(long long int n)
 {
     long long int numOfDigits;
 

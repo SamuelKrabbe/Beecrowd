@@ -11,11 +11,11 @@ int main()
     while (scanf("%d", &cases) != EOF)
     {
         int savedChars = 0, a, b;
-        long long int telNumber[2], numOfDigits;
+        long long int telNumber[cases], numOfDigits;
 
         for (int i = 0; i < cases; i++)
         {
-            scanf("%lld", telNumber[i]);
+            scanf("%lld", &telNumber[i]);
         }
 
         numOfDigits = getNumOfDigits(telNumber[0]);

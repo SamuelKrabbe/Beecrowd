@@ -24,7 +24,6 @@ int main()
 
             while ((numOfDigits >= 0) && ((j + 1) < cases))
             {
-                // printf("%lld", numOfDigits);
                 numOfDigits--;
 
                 a = telNumber[j] / pow(10, numOfDigits);
@@ -45,7 +44,7 @@ int getNumOfDigits(long long int telNumber)
 {
     int numOfDigits = 1;
 
-    while (telNumber <= 10)
+    while (telNumber >= 10)
     {
         telNumber /= 10;
         numOfDigits++;

@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int getFibonacciNum(int fibTerm);
+long long int getFibonacciNum(int fibTerm);
 
 int main()
 {
     int cases, fibTerm;
-    int fibonacciNum;
+    long long int fibonacciNum;
 
     scanf("%d", &cases);
 
@@ -16,16 +16,16 @@ int main()
 
         fibonacciNum = getFibonacciNum(fibTerm);
 
-        printf("Fib(%d) = %d\n", fibTerm, fibonacciNum);
+        printf("Fib(%d) = %lld\n", fibTerm, fibonacciNum);
     }
 
     return 0;
 }
 
-int getFibonacciNum(int fibTerm)
+long long int getFibonacciNum(int fibTerm)
 {
     int a = 0, b = 1;
-    int fib;
+    long long int fib;
 
     if (fibTerm == 0 || fibTerm == 1)
         return fibTerm;
@@ -36,7 +36,9 @@ int getFibonacciNum(int fibTerm)
             fib = a + b;
             a = b;
             b = fib;
+            printf("%d\n", fib);
         }
+        printf("%d\n", fib);
         return fib;
     }
 }

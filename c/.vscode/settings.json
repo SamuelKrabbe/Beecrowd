@@ -1,0 +1,8 @@
+{
+  "editor.fontSize": 16,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.mouseWheelZoom": true,
+  "editor.unfoldOnClickAfterEndOfLine": false
+}

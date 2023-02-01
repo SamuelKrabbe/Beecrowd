@@ -1,6 +1,6 @@
 value = int(input())
 notes_100 = value // 100
-notes_50 = (value % 100) // 50
+notes_50 = (value % 100) // 50 
 notes_20 = ((value % 100) % 50) // 20
 notes_10 = (((value % 100) % 50) % 20) // 10
 notes_5 = ((((value % 100) % 50) % 20) % 10) // 5
